@@ -21,6 +21,15 @@ function setHeaderBackgroundColor(p_color) {
   body.style.background = p_color;
 }
 
+function getRandomIndex() {
+  // generate a random int between 0 (include) and x (exclude)
+  if (easyMode) {
+    return Math.floor(Math.random() * Math.floor(3));
+  } else {
+    return Math.floor(Math.random() * Math.floor(6));
+  }
+}
+
 function getRandomColorValue() {
   // generate a random int between 0 (include) and 256 (exclude)
   return Math.floor(Math.random() * Math.floor(256));
@@ -42,9 +51,13 @@ function generateRandomRgb() {
 }
 
 function setRandomRgbToSquares() {
+  let randomSquareIndex = getRandomIndex();
   squaresColors.forEach( function(square) {
     square.style.background = `rgb(${getRandomColorValue()}, ${getRandomColorValue()}, ${getRandomColorValue()})`;
   });
+
+  squaresColors[randomSquareIndex].style.background =
+    `rgb(${currentRgbValues[0]}, ${currentRgbValues[1]}, ${currentRgbValues[2]})`;
 }
 
 function generateNewColors() {
@@ -60,7 +73,9 @@ function toggleDifficultyMode() {
 
 function addEventListenersOnSquares() {
   squaresColors.forEach( function(square) {
-    square.addEventListener("click", function() {console.log(square.style.background)});
+    square.addEventListener("click", function() {
+      isWon(square);
+    });
   });
 }
 
@@ -89,6 +104,20 @@ function addEventListenersOnButtons() {
 function addEventListeners() {
   addEventListenersOnSquares();
   addEventListenersOnButtons();
+}
+
+function isWon(p_squareClicked) {
+  let squareClickedRGB = p_squareClicked.style.background;
+  let currentRgbValuesString =
+    `rgb(${currentRgbValues[0]}, ${currentRgbValues[1]}, ${currentRgbValues[2]})`;
+
+  if (squareClickedRGB == currentRgbValuesString) {
+    textResultOfATry.textContent = "That was right ! :D";
+    setHeaderBackgroundColor(currentRgbValuesString)
+    generateNewColors();
+  } else {
+    textResultOfATry.textContent = "That was false... :/";
+  }
 }
 
 // toggleDifficultyMode();
