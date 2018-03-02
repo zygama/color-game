@@ -3,10 +3,83 @@
   <head>
     <meta charset="utf-8">
     <title>Color Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
 
-    
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div id="header">
+            <p class="pageTitle" id="firstLineHeader">The Great</p>
+            <p id="rgbCombinaison">
+              RGB(<span id="redValue">0</span>,
+                  <span id="greenValue">0</span>,
+                  <span id="blueValue">0</span>)
+            </p>
+            <p class="pageTitle" id="thirdLineHeader">RGB Finder Game</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <div class="barButtonsContainer">
+      <div class="container">
+        <div class="row barButtonsContainer">
+          <div class="col-md-4"><button class="navBarButtons">New Colors</button></div>
+          <div class="col-md-4">coucou</div>
+          <div class="col-md-4">
+            <button class="navBarButtons">Easy</button>
+            <button class="navBarButtons">Hard</button>
+          </div>
+        </div>
+        <!-- <span class="leftButtons">
+          <button class="navBarButtons">New Colors</button>
+        </span>
+        <span class="resultOfATry">coucou</span>
+
+        <span class="rightButtons">
+          <button class="navBarButtons">Easy</button>
+          <button class="navBarButtons">Hard</button>
+        </span> -->
+      </div>
+    </div>
+
+    <div id="backgroundGridElement">
+      <div class="container gridContainer">
+        <div class="row">
+          <div id="firstRowColors">
+            <div class="col-md-4 squareColorContainer">
+              <div class="squareColor"></div>
+            </div>
+            <div class="col-md-4 squareColorContainer">
+              <div class="squareColor"></div>
+            </div>
+            <div class="col-md-4 squareColorContainer">
+              <div class="squareColor"></div>
+            </div>
+          </div>
+
+          <div class="secondRowColors">
+            <div class="col-md-4 squareColorContainer">
+              <div class="squareColor"></div>
+            </div>
+            <div class="col-md-4 squareColorContainer">
+              <div class="squareColor"></div>
+            </div>
+            <div class="col-md-4 squareColorContainer">
+              <div class="squareColor"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>

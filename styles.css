@@ -1,0 +1,99 @@
+body {
+  background: rgb(74, 118, 184);
+}
+
+p {
+  line-height: 0.9em;
+}
+
+#header {
+  color: white;
+  text-align: center;
+}
+
+.pageTitle {
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.pageTitle#firstLineHeader {
+  margin-top: 20px;
+}
+
+.pageTitle#thirdLineHeader {
+  margin-bottom: 22px;
+}
+
+#rgbCombinaison {
+  font-size: 55px;
+}
+
+#redValue {
+
+}
+
+#greenValue {
+
+}
+
+#blueValue {
+
+}
+
+.barButtonsContainer {
+  text-align: center;
+  background: white;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+}
+
+.navBarButtons {
+  background: white;
+  border: 0;
+  color: rgb(74, 118, 184);
+  text-transform: uppercase;
+}
+
+.resultOfATry {
+  text-align: center;
+}
+
+.navBarButtons {
+  font-size: 25px;
+}
+
+.randomColorsContainer {
+  text-align: center;
+}
+
+#backgroundGridElement {
+  background: gray;
+  height: 100vh;
+}
+
+.gridContainer {
+  /* margin-top: 25px; */
+  width: 35%;
+}
+
+/* #firstRowColors {
+  margin-top: 25px;
+}
+
+#secondRowColors {
+  display: none;
+} */
+
+.squareColorContainer {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.squareColor {
+  border: 1px solid black;
+  display: inline-grid;
+  height: 150px;
+  width: 160px;
+  border-radius: 30px;
+}
