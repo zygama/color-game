@@ -52,6 +52,11 @@ p {
   text-transform: uppercase;
 }
 
+.difficultyModeSelected {
+  background: rgb(74, 118, 184);
+  color: white;
+}
+
 .resultOfATry {
   text-align: center;
 }
@@ -77,10 +82,10 @@ p {
 /* #firstRowColors {
   margin-top: 25px;
 }
-
-#secondRowColors {
+*/
+.hardModeRow {
   display: none;
-} */
+}
 
 .squareColorContainer {
   padding-top: 20px;

@@ -27,17 +27,35 @@ function getRandomColorValue() {
 }
 
 function generateRandomRgb() {
-  currentRgbValues = [
-    getRandomColorValue(),
-    getRandomColorValue(),
-    getRandomColorValue()
-  ];
+
+  let red = getRandomColorValue();
+  let green = getRandomColorValue();
+  let blue = getRandomColorValue();
+
+  currentRgbValues = [red, green, blue];
+
+  redValue.textContent = red.toString();
+  greenValue.textContent = green.toString();
+  blueValue.textContent = blue.toString();
+
+  console.log(currentRgbValues);
 }
 
 function setRandomRgbToSquares() {
   squaresColors.forEach( function(square) {
     square.style.background = `rgb(${getRandomColorValue()}, ${getRandomColorValue()}, ${getRandomColorValue()})`;
   });
+}
+
+function generateNewColors() {
+  generateRandomRgb();
+  setRandomRgbToSquares();
+}
+
+function toggleDifficultyMode() {
+  let secondRow = document.querySelector(".secondRowColors");
+
+  secondRow.classList.toggle("hardModeRow");
 }
 
 function addEventListenersOnSquares() {
@@ -48,14 +66,24 @@ function addEventListenersOnSquares() {
 
 function addEventListenersOnButtons() {
   easyButton.addEventListener("click", function() {
-    easyMode = true;
+    if (!easyMode) {
+      easyMode = true;
+      this.classList.add("difficultyModeSelected");
+      hardButton.classList.remove("difficultyModeSelected");
+      toggleDifficultyMode();
+      generateNewColors();
+    }
   });
   hardButton.addEventListener("click", function() {
-    easyMode = false;
+    if (easyMode) {
+      easyMode = false;
+      this.classList.add("difficultyModeSelected");
+      easyButton.classList.remove("difficultyModeSelected");
+      toggleDifficultyMode();
+      generateNewColors();
+    }
   });
-  newColorsButton.addEventListener("click", function() {
-    console.log("new colors clicked");
-  });
+  newColorsButton.addEventListener("click", generateNewColors);
 }
 
 function addEventListeners() {
@@ -63,5 +91,7 @@ function addEventListeners() {
   addEventListenersOnButtons();
 }
 
+// toggleDifficultyMode();
+generateRandomRgb();
 setRandomRgbToSquares();
 addEventListeners();
