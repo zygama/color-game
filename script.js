@@ -18,7 +18,7 @@ var squaresColors = document.querySelectorAll(".squareColor");
 
 function setHeaderBackgroundColor(p_color) {
   let body = document.getElementsByTagName("body")[0];
-  body.style.background = p_color;
+  body.style.background = p_color; 
 }
 
 function getRandomIndex() {
