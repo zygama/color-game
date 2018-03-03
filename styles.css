@@ -98,3 +98,21 @@ p {
 .squareClickedIsFalse {
   display: none;
 }
+
+/* Animations */
+.makeSquareDisapear {
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-name: disapearSmoothly;
+  animation-fill-mode: forwards;
+}
+@keyframes disapearSmoothly{
+  from {
+    display: block;
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}

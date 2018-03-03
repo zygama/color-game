@@ -18,7 +18,7 @@ var squaresColors = document.querySelectorAll(".squareColor");
 
 function setHeaderBackgroundColor(p_color) {
   let body = document.getElementsByTagName("body")[0];
-  body.style.background = p_color; 
+  body.style.background = p_color;
 }
 
 function getRandomIndex() {
@@ -68,9 +68,10 @@ function generateNewColors() {
 function reloadGame() {
   generateNewColors();
   setHeaderBackgroundColor("rgb(74, 118, 184)");
+  textResultOfATry.textContent = "";
 
   squaresColors.forEach( function(square) {
-    square.classList.remove("squareClickedIsFalse");
+    square.classList.remove("makeSquareDisapear");
   });
 }
 
@@ -128,12 +129,13 @@ function isWon(p_squareClicked) {
     setHeaderBackgroundColor(currentRgbValuesString);
     squaresColors.forEach( function(square) {
       square.style.background = squareClickedRGB;
-      square.classList.remove("squareClickedIsFalse");
       newColorsButton.textContent = "Play again !";
+      square.classList.remove("makeSquareDisapear");
     });
   } else {
     textResultOfATry.textContent = "That was false... :/";
-    p_squareClicked.classList.add("squareClickedIsFalse");
+    // p_squareClicked.classList.add("squareClickedIsFalse");
+    p_squareClicked.classList.add("makeSquareDisapear");
   }
 }
 
