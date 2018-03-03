@@ -107,7 +107,10 @@ function addEventListenersOnButtons() {
       reloadGame();
     }
   });
-  newColorsButton.addEventListener("click", reloadGame);
+  newColorsButton.addEventListener("click", function() {
+    reloadGame();
+    this.textContent = "New Colors";
+  });
 }
 
 function addEventListeners() {
@@ -126,6 +129,7 @@ function isWon(p_squareClicked) {
     squaresColors.forEach( function(square) {
       square.style.background = squareClickedRGB;
       square.classList.remove("squareClickedIsFalse");
+      newColorsButton.textContent = "Play again !";
     });
     // generateNewColors();
   } else {
