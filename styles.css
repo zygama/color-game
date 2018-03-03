@@ -6,6 +6,10 @@ p {
   line-height: 0.9em;
 }
 
+button {
+  outline-style: none;
+}
+
 #header {
   color: white;
   text-align: center;
@@ -63,6 +67,7 @@ p {
 
 .navBarButtons {
   font-size: 25px;
+  font-weight: bold;
 }
 
 .randomColorsContainer {
