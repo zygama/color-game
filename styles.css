@@ -99,3 +99,7 @@ p {
   width: 160px;
   border-radius: 30px;
 }
+
+.squareClickedIsFalse {
+  display: none;
+}

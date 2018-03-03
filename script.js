@@ -65,6 +65,15 @@ function generateNewColors() {
   setRandomRgbToSquares();
 }
 
+function reloadGame() {
+  generateNewColors();
+  setHeaderBackgroundColor("rgb(74, 118, 184)");
+
+  squaresColors.forEach( function(square) {
+    square.classList.remove("squareClickedIsFalse");
+  });
+}
+
 function toggleDifficultyMode() {
   let secondRow = document.querySelector(".secondRowColors");
 
@@ -86,7 +95,7 @@ function addEventListenersOnButtons() {
       this.classList.add("difficultyModeSelected");
       hardButton.classList.remove("difficultyModeSelected");
       toggleDifficultyMode();
-      generateNewColors();
+      reloadGame();
     }
   });
   hardButton.addEventListener("click", function() {
@@ -95,10 +104,10 @@ function addEventListenersOnButtons() {
       this.classList.add("difficultyModeSelected");
       easyButton.classList.remove("difficultyModeSelected");
       toggleDifficultyMode();
-      generateNewColors();
+      reloadGame();
     }
   });
-  newColorsButton.addEventListener("click", generateNewColors);
+  newColorsButton.addEventListener("click", reloadGame);
 }
 
 function addEventListeners() {
@@ -113,12 +122,18 @@ function isWon(p_squareClicked) {
 
   if (squareClickedRGB == currentRgbValuesString) {
     textResultOfATry.textContent = "That was right ! :D";
-    setHeaderBackgroundColor(currentRgbValuesString)
-    generateNewColors();
+    setHeaderBackgroundColor(currentRgbValuesString);
+    squaresColors.forEach( function(square) {
+      square.style.background = squareClickedRGB;
+      square.classList.remove("squareClickedIsFalse");
+    });
+    // generateNewColors();
   } else {
     textResultOfATry.textContent = "That was false... :/";
+    p_squareClicked.classList.add("squareClickedIsFalse");
   }
 }
+
 
 // toggleDifficultyMode();
 generateRandomRgb();
