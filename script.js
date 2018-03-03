@@ -131,7 +131,6 @@ function isWon(p_squareClicked) {
       square.classList.remove("squareClickedIsFalse");
       newColorsButton.textContent = "Play again !";
     });
-    // generateNewColors();
   } else {
     textResultOfATry.textContent = "That was false... :/";
     p_squareClicked.classList.add("squareClickedIsFalse");
@@ -139,7 +138,6 @@ function isWon(p_squareClicked) {
 }
 
 
-// toggleDifficultyMode();
 generateRandomRgb();
 setRandomRgbToSquares();
 addEventListeners();
