@@ -18,7 +18,7 @@ var squaresColors = document.querySelectorAll(".squareColor");
 
 function setHeaderBackgroundColor(p_color) {
   let body = document.getElementsByTagName("body")[0];
-  body.style.background = p_color;
+  body.style.backgroundColor = p_color;
 }
 
 function getRandomIndex() {
@@ -53,10 +53,10 @@ function generateRandomRgb() {
 function setRandomRgbToSquares() {
   let randomSquareIndex = getRandomIndex();
   squaresColors.forEach( function(square) {
-    square.style.background = `rgb(${getRandomColorValue()}, ${getRandomColorValue()}, ${getRandomColorValue()})`;
+    square.style.backgroundColor = `rgb(${getRandomColorValue()}, ${getRandomColorValue()}, ${getRandomColorValue()})`;
   });
 
-  squaresColors[randomSquareIndex].style.background =
+  squaresColors[randomSquareIndex].style.backgroundColor =
     `rgb(${currentRgbValues[0]}, ${currentRgbValues[1]}, ${currentRgbValues[2]})`;
 }
 
@@ -120,7 +120,7 @@ function addEventListeners() {
 }
 
 function isWon(p_squareClicked) {
-  let squareClickedRGB = p_squareClicked.style.background;
+  let squareClickedRGB = p_squareClicked.style.backgroundColor;
   let currentRgbValuesString =
     `rgb(${currentRgbValues[0]}, ${currentRgbValues[1]}, ${currentRgbValues[2]})`;
 
@@ -128,7 +128,7 @@ function isWon(p_squareClicked) {
     textResultOfATry.textContent = "That was right ! :D";
     setHeaderBackgroundColor(currentRgbValuesString);
     squaresColors.forEach( function(square) {
-      square.style.background = squareClickedRGB;
+      square.style.backgroundColor = squareClickedRGB;
       newColorsButton.textContent = "Play again !";
       square.classList.remove("makeSquareDisapear");
     });
