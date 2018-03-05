@@ -32,15 +32,6 @@ button {
   font-size: 55px;
 }
 
-#redValue {
-}
-
-#greenValue {
-}
-
-#blueValue {
-}
-
 .barButtonsContainer {
   text-align: center;
   background: white;
@@ -54,6 +45,8 @@ button {
   border: 0;
   text-transform: uppercase;
   color: rgb(74, 118, 184);
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .difficultyModeSelected {
@@ -65,11 +58,6 @@ button {
   text-align: center;
 }
 
-.navBarButtons {
-  font-size: 25px;
-  font-weight: bold;
-}
-
 .randomColorsContainer {
   text-align: center;
 }
@@ -79,25 +67,23 @@ button {
   height: 100vh;
 }
 
-.gridContainer {
-  width: 35%;
-}
-
 .hardModeRow {
   display: none;
 }
 
 .squareColorContainer {
+  margin: 0 auto;
+  max-width: 600px;
   padding-top: 20px;
-  text-align: center;
 }
 
 .squareColor {
   border: 1px solid black;
-  display: inline-grid;
-  height: 150px;
-  width: 160px;
-  border-radius: 30px;
+  border-radius: 17%;
+  width: 30%;
+  padding-bottom: 30%;
+  float: left;
+  margin: 1.66%;
 }
 
 .squareClickedIsFalse {
@@ -111,11 +97,13 @@ button {
   animation-iteration-count: 1;
   animation-name: disapearSmoothly;
 }
-@keyframes disapearSmoothly{
+
+@keyframes disapearSmoothly {
   from {
     display: block;
     opacity: 1;
   }
+
   to {
     display: none;
     opacity: 0;
