@@ -49,6 +49,11 @@ button {
   font-weight: bold;
 }
 
+.navBarButtons:hover {
+  background: rgb(74, 118, 184);
+  color: white;
+}
+
 .difficultyModeSelected {
   background: rgb(74, 118, 184);
   color: white;
