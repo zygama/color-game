@@ -1,5 +1,9 @@
+:root {
+  --main-bg-color: rgb(74, 118, 184);
+}
+
 body {
-  background: rgb(74, 118, 184);
+  background: var(--main-bg-color);
 }
 
 p {
@@ -44,18 +48,18 @@ button {
   background: white;
   border: 0;
   text-transform: uppercase;
-  color: rgb(74, 118, 184);
+  color: var(--main-bg-color);
   font-size: 25px;
   font-weight: bold;
 }
 
 .navBarButtons:hover {
-  background: rgb(74, 118, 184);
+  background: var(--main-bg-color);
   color: white;
 }
 
 .difficultyModeSelected {
-  background: rgb(74, 118, 184);
+  background: var(--main-bg-color);
   color: white;
 }
 
